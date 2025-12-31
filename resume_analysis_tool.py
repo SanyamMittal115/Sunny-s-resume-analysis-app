@@ -12,9 +12,8 @@ Target = ["Product Manager", "AI Engineer", "Business Analyst", "Solutions Engin
 uploadfil = st.file_uploader("Upload your resume in PDF format", type=["pdf"])
 print("Loading model...")
 
-classifymodel = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
-summarymodel = pipeline("summarization",model="facebook/bart-large-cnn")
-ner = pipeline("ner",model="dslim/bert-base-NER", aggregation_strategy="simple")
+classifymodel = pipeline("zero-shot-classification", model="facebook/bart-large-mnli", device=-1, framework="pt")
+summarymodel = pipeline("summarization",model="facebook/bart-large-cnn", device=-1, framework="pt")
 ner = pipeline("ner",model="dslim/bert-base-NER", aggregation_strategy="simple", device=-1, framework="pt")
 
 def text_extract(path):
@@ -119,3 +118,4 @@ def main():
 #Run
 if __name__ == "__main__":
     main()
+
