@@ -1,5 +1,6 @@
-﻿streamlit>=1.30
-transformers==4.37.2
+streamlit
+torch==2.2.2
+transformers==4.39.3
 pypdf
-
 sentencepiece
+accelerate
