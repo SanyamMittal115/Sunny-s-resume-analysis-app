@@ -32,9 +32,7 @@ def text_extract(path):
         st.subheader("Extracted text")
         return txt
        
-if uploadfil is not None:
-    st.write("File upload:", uploadfil.name)
-    
+
 # Chunktext
 def chunksplit(txt, max_length):
     chunks = []
@@ -92,10 +90,10 @@ def summarize_resume(chunks):
 
 #set up final detection
 def main():
-    if uploadfil is None:
+    if upload is None:
         return
 
-    txt = text_extract(uploadfil)
+    txt = text_extract(upload)
 
     
     st.text_area("Resume Text", txt, height=300)
